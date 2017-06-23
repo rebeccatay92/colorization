@@ -12,11 +12,11 @@ document.querySelector('div').addEventListener('click', function() {
   if (colorText.innerText === color) {
     counter++
     score.innerText = counter
-    colorText.innerText = colorPalette[Math.floor(Math.random() * 6)]
+    colorText.innerText = colorPalette[Math.floor(Math.random() * 5)]
   }
 })
 
 function colorize () {
-  body.style.backgroundColor = colorPalette[Math.floor(Math.random() * 6)] //changes body backgroundColor
+  body.style.backgroundColor = colorPalette[Math.floor(Math.random() * 5)] //changes body backgroundColor
   color = body.style.backgroundColor
 }
