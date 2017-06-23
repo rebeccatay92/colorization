@@ -4,12 +4,26 @@ function randNum () {
 }
 var counter = 0
 var score = document.querySelector('.score')
-document.querySelector('div').addEventListener('click', colorize)
+var body = document.querySelector('body')
+var colorText = document.querySelector('.colorText')
+var colorPalette = ['red', 'green', 'blue', 'orange','purple']
+
+//colors change independently of button click
+setInterval(colorize, 2000)
+
 document.querySelector('div').addEventListener('click', function() {
-  counter ++
+  //scoring logic to be inserted here
+})
+document.querySelector('div').addEventListener('click', function() {
+  if (true) { //if scoring says true
+    counter ++ //icnrease score
+  }
   score.innerText = counter
 })
+//create function scoring which checks if background color = colorText
+
 
 function colorize () {
-  document.querySelector('body').style.backgroundColor = 'rgba(' + randNum() + ',' + randNum() + ',' + randNum() + ',' + randNum() + ')'
+  body.style.backgroundColor = colorPalette[Math.floor(Math.random() * 5)] //changes body backgroundColor
+  colorText.innerText = colorPalette[Math.floor(Math.random() * 5)]
 }
