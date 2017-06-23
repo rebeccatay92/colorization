@@ -1,25 +1,22 @@
-var colors = ['yellow', 'red', 'green', 'blue', 'purple']
-var color = ''
-// returns number between 0 and 255
-function randNum () {
-  return Math.floor(Math.random() * 6)
-}
-
+var body = document.querySelector('body')
+var colorText = document.querySelector('.colorText')
+var colorPalette = ['red', 'green', 'blue', 'orange','purple']
 var counter = 0
+var color = '';
 var score = document.querySelector('.score')
 
-// click to change color
-document.querySelector('div').addEventListener('click', colorize)
+//colors change independently of button click
+setInterval(colorize, 2000)
 
-document.querySelector('div').addEventListener('click', function () {
-  // if (document.querySelector('div').textcontent === color) {
-  counter++
-  score.innerText = counter
-  // }
+document.querySelector('div').addEventListener('click', function() {
+  if (colorText.innerText === color) {
+    counter++
+    score.innerText = counter
+    colorText.innerText = colorPalette[Math.floor(Math.random() * 6)]
+  }
 })
 
 function colorize () {
-  var randStore = randNum()
-  document.querySelector('body').style.backgroundColor = colors[randStore]
-  color = colors[randStore]
+  body.style.backgroundColor = colorPalette[Math.floor(Math.random() * 6)] //changes body backgroundColor
+  color = body.style.backgroundColor
 }
