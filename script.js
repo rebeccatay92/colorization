@@ -1,14 +1,16 @@
 var body = document.querySelector('body')
 var colorText = document.querySelector('.colorText')
-var colorPalette = ['red', 'green', 'blue', 'orange','purple']
+var colorPalette = ['red', 'green', 'blue', 'orange', 'purple']
 var counter = 0
-var color = '';
+var color = ''
 var score = document.querySelector('.score')
 
-//colors change independently of button click
-setInterval(colorize, 2000)
+// colors change independently of button click
+setInterval(colorize, 1000)
+colorText.style.innerText =
+colorText.innerText = colorPalette[Math.floor(Math.random() * 5)]
 
-document.querySelector('div').addEventListener('click', function() {
+document.querySelector('div').addEventListener('click', function () {
   if (colorText.innerText === color) {
     counter++
     score.innerText = counter
