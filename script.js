@@ -7,8 +7,7 @@ var score = document.querySelector('.score')
 
 // colors change independently of button click
 setInterval(colorize, 1000)
-colorText.style.innerText =
-colorText.innerText = colorPalette[Math.floor(Math.random() * 5)]
+
 
 document.querySelector('div').addEventListener('click', function () {
   if (colorText.innerText === color) {
@@ -21,4 +20,5 @@ document.querySelector('div').addEventListener('click', function () {
 function colorize () {
   body.style.backgroundColor = colorPalette[Math.floor(Math.random() * 5)] //changes body backgroundColor
   color = body.style.backgroundColor
+  colorText.innerText = colorPalette[Math.floor(Math.random() * 5)]
 }
